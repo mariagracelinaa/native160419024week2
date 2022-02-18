@@ -40,9 +40,10 @@ class MainFragment : Fragment() {
 
                 point = point + 1
                 txtAnswer.setText("")
+                txtPoint.text = point.toString()
 
             } else {
-                val action = MainFragmentDirections.actionResultFragment()
+                val action = MainFragmentDirections.actionResultFragment(point.toString())
                 Navigation.findNavController(it).navigate(action)
             }
         }
