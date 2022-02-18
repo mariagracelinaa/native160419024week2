@@ -9,8 +9,8 @@ import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment() {
-    var number1 = (0..50).random()
-    var number2 = (0..50).random()
+    var number1 = (1..50).random()
+    var number2 = (1..50).random()
     var point = 0
 
     override fun onCreateView(
@@ -32,15 +32,14 @@ class MainFragment : Fragment() {
             val answer = txtAnswer.text.toString()
 
             if (res == answer) {
-                number1 = (0..50).random()
-                number2 = (0..50).random()
+                number1 = (1..50).random()
+                number2 = (1..50).random()
 
                 txtNum1.text = number1.toString()
                 txtNum2.text = number2.toString()
 
                 point = point + 1
                 txtAnswer.setText("")
-                txtPoint.text = point.toString()
 
             } else {
                 val action = MainFragmentDirections.actionResultFragment(point.toString())
